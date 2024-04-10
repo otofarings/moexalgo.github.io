@@ -1,2 +1,2 @@
-# algopack.github.io
+# moexalgo.github.io
 moex algopack doc page
