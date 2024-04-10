@@ -1,0 +1,86 @@
+openapi: 3.0.3
+info:
+  title: ALGOPACK
+  description: |-
+    This is a sample
+
+  contact:
+    email: algopack@moex.com
+  version: 1.0.11
+servers:
+  - url: https://iss.moex.com
+
+tags:
+  - name: SuperCandles
+    description: All about SuperCandles
+
+
+  
+paths:
+  
+  /authenticate: # <-- This is your new endpoint for authentication
+    get:
+      servers:  # Override for this particular path
+        - url: https://passport.moex.com
+      summary: Authenticate user
+      description: Authenticates user with MOEX Passport.
+      tags:
+        - Authentication
+      security:
+        - basicAuth: []
+      responses:
+        '200':
+          description: successful operation
+        '401':
+          description: Authentication failed
+          
+          
+  /iss/analyticalproducts/futoi/securities.jsonp:
+    get:
+      tags:
+        - SuperCandles
+      summary: Finds Pets by status
+      description: Multiple status values can be provided with comma separated strings
+      parameters:
+        - name: tags
+          in: query
+          description: Tags to filter by
+          required: false
+          explode: true
+          schema:
+            type: array
+            items:
+              type: string
+              
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  #$ref: '#/components/schemas/Pet'          
+            application/xml:
+              schema:
+                type: array
+                items:
+                  #$ref: '#/components/schemas/Pet'
+        '400':
+          description: Invalid status value
+      security:
+        - basicAuth: []  # <-- use the same name here
+    
+
+
+          
+components:
+  securitySchemes:
+    basicAuth:     # This name links to the security field in each path
+      type: http
+      scheme: basic
+      # Add the 'x-basicauth-url' extension for your authentication URL
+      x-basicauth-url: https://passport.moex.com/authenticate
+
+security:
+  - basicAuth: [] # Global security, apply to all endpoints unless overridden
