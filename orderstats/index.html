@@ -8,13 +8,9 @@
       
       
       
-        <link rel="canonical" href="https://data.moex.com/api/">
+        <link rel="canonical" href="https://data.moex.com/orderstats/">
       
       
-        <link rel="prev" href="..">
-      
-      
-        <link rel="next" href="../modules/realtime/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -22,7 +18,7 @@
     
     
       
-        <title>API - MOEX ALGOPACK</title>
+        <title>ORDER STATS - MOEX ALGOPACK</title>
       
     
     
@@ -71,6 +67,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#order-stats" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -101,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              API
+              ORDER STATS
             
           </span>
         </div>
@@ -204,11 +205,9 @@
         
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../api/" class="md-tabs__link">
         
   
     
@@ -395,17 +394,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -414,7 +406,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1203,6 +1194,196 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#put_orders-cancel_orders" class="md-nav__link">
+    <span class="md-ellipsis">
+      put_orders, cancel_orders
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#put_orders_b-put_orders_s" class="md-nav__link">
+    <span class="md-ellipsis">
+      put_orders_b, put_orders_s
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cancel_orders_b-cancel_orders_s" class="md-nav__link">
+    <span class="md-ellipsis">
+      cancel_orders_b, cancel_orders_s
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vol" class="md-nav__link">
+    <span class="md-ellipsis">
+      vol
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="vol">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#put_vol-cancel_vol" class="md-nav__link">
+    <span class="md-ellipsis">
+      put_vol, cancel_vol
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put_vol_b-put_vol_s" class="md-nav__link">
+    <span class="md-ellipsis">
+      put_vol_b, put_vol_s
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancel_vol_b-cancel_vol_s" class="md-nav__link">
+    <span class="md-ellipsis">
+      cancel_vol_b, cancel_vol_s
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Пример
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#val" class="md-nav__link">
+    <span class="md-ellipsis">
+      val
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="val">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#put_val-cancel_val" class="md-nav__link">
+    <span class="md-ellipsis">
+      put_val, cancel_val
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put_val_b-put_val_s" class="md-nav__link">
+    <span class="md-ellipsis">
+      put_val_b, put_val_s
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancel_val_b-cancel_val_s" class="md-nav__link">
+    <span class="md-ellipsis">
+      cancel_val_b, cancel_val_s
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Пример
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vwap" class="md-nav__link">
+    <span class="md-ellipsis">
+      vwap
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="vwap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Средневзвешенная цена — это средняя цена заявок, весом которых является объем заявок
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Пример расчета:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put_vwap_b-put_vwap_s-cancel_vwap_b-cancel_vwap_s" class="md-nav__link">
+    <span class="md-ellipsis">
+      put_vwap_b, put_vwap_s, cancel_vwap_b, cancel_vwap_s
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Пример:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1220,18 +1401,76 @@
   
 
 
-  <h1>API</h1>
-
-<p><link type="text/css" rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@5/swagger-ui.css"></p>
-<div id="swagger-ui-1">
-</div>
-<script src="https://unpkg.com/swagger-ui-dist@5/swagger-ui-bundle.js" charset="UTF-8"></script>
-<script>
-    SwaggerUIBundle({
-      url: 'openapi.yaml',
-      dom_id: '#swagger-ui-1',
-    })
-</script>
+<h1 id="order-stats">ORDER STATS</h1>
+<ul>
+<li>
+<h3 id="put_orders-cancel_orders">put_orders, cancel_orders</h3>
+<p>Количество поставленных сделок</p>
+</li>
+<li>
+<h3 id="put_orders_b-put_orders_s">put_orders_b, put_orders_s</h3>
+<p>Количество заявок на покупку/продажу, поставленных в стакан</p>
+</li>
+<li>
+<h3 id="cancel_orders_b-cancel_orders_s">cancel_orders_b, cancel_orders_s</h3>
+<p>Количество снятых заявок на покупку/продажу</p>
+</li>
+</ul>
+<h2 id="vol">vol</h2>
+<ul>
+<li>
+<h3 id="put_vol-cancel_vol">put_vol, cancel_vol</h3>
+<p>Объем заявок, поставленных/снятых в стакан</p>
+</li>
+<li>
+<h3 id="put_vol_b-put_vol_s">put_vol_b, put_vol_s</h3>
+<p>Объем заявок на покупку/продажу, поставленных в стакан</p>
+</li>
+<li>
+<h3 id="cancel_vol_b-cancel_vol_s">cancel_vol_b, cancel_vol_s</h3>
+<p>Объем снятых заявок на покупку/продажу</p>
+</li>
+</ul>
+<h3 id="_1">Пример</h3>
+<p><img alt="image" src="https://github.com/kde2podfreebsd/MOEX-ALGOPACK-DOCS/assets/39852259/276a0edf-f87f-4d71-bf7e-67dfb4e28d09" /></p>
+<h2 id="val">val</h2>
+<ul>
+<li>
+<h3 id="put_val-cancel_val">put_val, cancel_val</h3>
+Объем заявок, поставленных/снятых в стакан (₽)</li>
+</ul>
+<pre><code>put_val = put_val_b + put_val_s
+</code></pre>
+<pre><code>cancel_val = cancel_val_b + cancel_val_s
+</code></pre>
+<ul>
+<li>
+<h3 id="put_val_b-put_val_s">put_val_b, put_val_s</h3>
+<p>Объем заявок на покупку/продажу, поставленных в стакан (₽)</p>
+</li>
+<li>
+<h3 id="cancel_val_b-cancel_val_s">cancel_val_b, cancel_val_s</h3>
+<p>Объем снятых заявок на покупку/продажу выраженный в рублях</p>
+</li>
+</ul>
+<h3 id="_2">Пример</h3>
+<p><img alt="image" src="https://github.com/kde2podfreebsd/MOEX-ALGOPACK-DOCS/assets/39852259/1d8f607b-dc2a-4ce4-9335-9a9db8ecdfcb" /></p>
+<h2 id="vwap">vwap</h2>
+<h3 id="_3">Средневзвешенная цена — это средняя цена заявок, весом которых является объем заявок</h3>
+<h3 id="_4">Пример расчета:</h3>
+<p>Было выставлено 3 заявки
+<img alt="image" src="https://github.com/kde2podfreebsd/MOEX-ALGOPACK-DOCS/assets/39852259/4158e585-ced7-4659-b39e-9ba3e1c5cd72" /></p>
+<ul>
+<li>
+<h3 id="put_vwap_b-put_vwap_s-cancel_vwap_b-cancel_vwap_s">put_vwap_b, put_vwap_s, cancel_vwap_b, cancel_vwap_s</h3>
+<strong>Средневзвешенная цена выставленных/отмененных заявок на покупку и продажу</strong>, соответственно — это средняя цена заявки покупки или продажи, весом которых является объем соответствующих сделок.</li>
+</ul>
+<pre><code>put_vwap_b = put_val_b / put_vol_b
+</code></pre>
+<h3 id="_5">Пример:</h3>
+<p>Есть 2 сделки на покупку: 100 акций по 10 рублей и 200 акций по 20 рублей, тогда:</p>
+<pre><code>put_vwap_b = (100*10 + 200*20) / (100 + 200) = 16.67 ₽
+</code></pre>
 
 
 

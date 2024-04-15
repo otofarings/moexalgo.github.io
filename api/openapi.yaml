@@ -1,21 +1,28 @@
 openapi: 3.0.3
-info:
-  title: ALGOPACK
-  description: |-
-    This is a sample
-
-  contact:
-    email: algopack@moex.com
-  version: 1.0.11
+#info:
+#  title: ALGOPACK
+#  description: 
+#  version: 1.0.0
 servers:
   - url: https://iss.moex.com
 
 tags:
-  - name: SuperCandles
-    description: All about SuperCandles
+  - name: Real-time market data - Акции
+    description: Свечи, стаканы, сделки
+  - name: Real-time market data - Фьючерсы
+    description: Свечи, стаканы, сделки
+  - name: Super Candles - Акции
+    description: фичи на потоке сделок, заявок и стакана котировок
+  - name: Super Candles - Фьючерсы
+    description: фичи на потоке сделок, заявок и стакана котировок
+  - name: Super Candles - Валюта
+    description: фичи на потоке сделок, заявок и стакана котировок
+  - name: Futures Open Interest (FUTOI)
+    description: Открытые позиции физ. и юр. лиц
+  - name: Market Concetration (HI2)
+    description: Индекс рыночной концентрации
 
-
-  
+    
 paths:
   
   /authenticate: # <-- This is your new endpoint for authentication
@@ -34,43 +41,393 @@ paths:
         '401':
           description: Authentication failed
           
+  
+  
+  #Real-time
+
+  #eq
+  /iss/engines/stock/markets/shares/boards/tqbr/securities.jsonp:
+    get:
+      tags:
+        - Real-time market data - Акции
+      summary: Торговая статистика за сегодня
+      description: даенные по всем инструментам за одну дату
+
+    
+  /iss/engines/stock/markets/shares/boards/tqbr/securities/{ticker}.jsonp:
+    get:
+      tags:
+        - Real-time market data - Акции
+      summary: Торговая статистика за сегодня (один инструмент)
+      description: данные по одному выбранному инструменту за период
+      parameters:
+        - name: ticker
+          in: path
+          description: вернуть данные по указанному инструменту
+          required: true
           
+  /iss/engines/stock/markets/shares/boards/tqbr/securities/{ticker}/candles.jsonp:
+    get:
+      tags:
+        - Real-time market data - Акции
+      summary: Свечи по инструменту
+      description: данные по одному выбранному инструменту за период
+      parameters:
+        - name: ticker
+          in: path
+          description: вернуть данные по указанному инструменту
+          required: true
+          
+  /iss/engines/stock/markets/shares/boards/tqbr/securities/{ticker}/orderbook.jsonp:
+    get:
+      tags:
+        - Real-time market data - Акции
+      summary: Стакан котировок по инструменту
+      description: данные по одному выбранному инструменту за период
+      parameters:
+        - name: ticker
+          in: path
+          description: вернуть данные по указанному инструменту
+          required: true
+          
+  /iss/engines/stock/markets/shares/boards/tqbr/securities/{ticker}/trades.jsonp:
+    get:
+      tags:
+        - Real-time market data - Акции
+      summary: Все сделки по инструменту
+      description: данные по одному выбранному инструменту за период
+      parameters:
+        - name: ticker
+          in: path
+          description: вернуть данные по указанному инструменту
+          required: true
+          
+          
+  #fut
+  /iss/engines/futures/markets/forts/boards/rfud/securities.jsonp:
+    get:
+      tags:
+        - Real-time market data - Фьючерсы
+      summary: Торговая статистика за сегодня
+      description: даенные по всем инструментам за одну дату
+
+    
+  /iss/engines/futures/markets/forts/boards/rfud/securities/{ticker}.jsonp:
+    get:
+      tags:
+        - Real-time market data - Фьючерсы
+      summary: Торговая статистика за сегодня (один инструмент)
+      description: данные по одному выбранному инструменту за период
+      parameters:
+        - name: ticker
+          in: path
+          description: вернуть данные по указанному инструменту
+          required: true
+          
+  /iss/engines/futures/markets/forts/boards/rfud/securities/{ticker}/candles.jsonp:
+    get:
+      tags:
+        - Real-time market data - Фьючерсы
+      summary: Свечи по инструменту
+      description: данные по одному выбранному инструменту за период
+      parameters:
+        - name: ticker
+          in: path
+          description: вернуть данные по указанному инструменту
+          required: true
+          
+  /iss/engines/futures/markets/forts/boards/rfud/securities/{ticker}/orderbook.jsonp:
+    get:
+      tags:
+        - Real-time market data - Фьючерсы
+      summary: Стакан котировок по инструменту
+      description: данные по одному выбранному инструменту за период
+      parameters:
+        - name: ticker
+          in: path
+          description: вернуть данные по указанному инструменту
+          required: true
+          
+  /iss/engines/futures/markets/forts/boards/rfud/securities/{ticker}/trades.jsonp:
+    get:
+      tags:
+        - Real-time market data - Фьючерсы
+      summary: Все сделки по инструменту
+      description: данные по одному выбранному инструменту за период
+      parameters:
+        - name: ticker
+          in: path
+          description: вернуть данные по указанному инструменту
+          required: true
+          
+          
+  
+  
+  #Super Candles 
+
+  #eq
+  /iss/datashop/algopack/eq/tradestats.jsonp:
+    get:
+      tags:
+        - Super Candles - Акции
+      summary: Акции, tradestats
+      description: даенные по всем инструментам за одну дату
+
+    
+  /iss/datashop/algopack/eq/tradestats/{ticker}.jsonp:
+    get:
+      tags:
+        - Super Candles - Акции
+      summary: Акции, tradestats (один инструмент)
+      description: данные по одному выбранному инструменту за период
+      parameters:
+        - name: ticker
+          in: path
+          description: вернуть данные по указанному инструменту
+          required: true
+ 
+  /iss/datashop/algopack/eq/obstats.jsonp:
+    get:
+      tags:
+        - Super Candles - Акции
+      summary: Акции, obstats
+      description: даенные по всем инструментам за одну дату
+
+    
+  /iss/datashop/algopack/eq/obstats/{ticker}.jsonp:
+    get:
+      tags:
+        - Super Candles - Акции
+      summary: Акции, obstats (один инструмент)
+      description: данные по одному выбранному инструменту за период
+      parameters:
+        - name: ticker
+          in: path
+          description: вернуть данные по указанному инструменту
+          required: true
+           
+  /iss/datashop/algopack/eq/orderstats.jsonp:
+    get:
+      tags:
+        - Super Candles - Акции
+      summary: Акции, orderstats
+      description: даенные по всем инструментам за одну дату
+
+    
+  /iss/datashop/algopack/eq/orderstats/{ticker}.jsonp:
+    get:
+      tags:
+        - Super Candles - Акции
+      summary: Акции, orderstats (один инструмент)
+      description: данные по одному выбранному инструменту за период
+      parameters:
+        - name: ticker
+          in: path
+          description: вернуть данные по указанному инструменту
+          required: true
+          
+          
+
+          
+          
+  #fut
+  /iss/datashop/algopack/fo/tradestats.jsonp:
+    get:
+      tags:
+        - Super Candles - Фьючерсы
+      summary: Фьючерсы, tradestats
+      description: даенные по всем инструментам за одну дату
+
+    
+  /iss/datashop/algopack/fo/tradestats/{ticker}.jsonp:
+    get:
+      tags:
+        - Super Candles - Фьючерсы
+      summary: Фьючерсы, tradestats (один инструмент)
+      description: данные по одному выбранному инструменту за период
+      parameters:
+        - name: ticker
+          in: path
+          description: вернуть данные по указанному инструменту
+          required: true
+          
+          
+  /iss/datashop/algopack/fo/obstats.jsonp:
+    get:
+      tags:
+        - Super Candles - Фьючерсы
+      summary: Фьючерсы, obstats
+      description: даенные по всем инструментам за одну дату
+
+    
+  /iss/datashop/algopack/fo/obstats/{ticker}.jsonp:
+    get:
+      tags:
+        - Super Candles - Фьючерсы
+      summary: Фьючерсы, obstats (один инструмент)
+      description: данные по одному выбранному инструменту за период
+      parameters:
+        - name: ticker
+          in: path
+          description: вернуть данные по указанному инструменту
+          required: true
+  
+  
+  
+  #fx
+  /iss/datashop/algopack/fx/tradestats.jsonp:
+    get:
+      tags:
+        - Super Candles - Валюта
+      summary: Валюта, tradestats
+      description: даенные по всем инструментам за одну дату
+
+    
+  /iss/datashop/algopack/fx/tradestats/{ticker}.jsonp:
+    get:
+      tags:
+        - Super Candles - Валюта
+      summary: Валюта, tradestats (один инструмент)
+      description: данные по одному выбранному инструменту за период
+      parameters:
+        - name: ticker
+          in: path
+          description: вернуть данные по указанному инструменту
+          required: true
+          
+          
+  /iss/datashop/algopack/fx/obstats.jsonp:
+    get:
+      tags:
+        - Super Candles - Валюта
+      summary: Валюта, obstats
+      description: даенные по всем инструментам за одну дату
+
+    
+  /iss/datashop/algopack/fx/obstats/{ticker}.jsonp:
+    get:
+      tags:
+        - Super Candles - Валюта
+      summary: Валюта, obstats (один инструмент)
+      description: данные по одному выбранному инструменту за период
+      parameters:
+        - name: ticker
+          in: path
+          description: вернуть данные по указанному инструменту
+          required: true
+          
+          
+  /iss/datashop/algopack/fx/orderstats.jsonp:
+    get:
+      tags:
+        - Super Candles - Валюта
+      summary: Валюта, orderstats
+      description: даенные по всем инструментам за одну дату
+
+    
+  /iss/datashop/algopack/fx/orderstats/{ticker}.jsonp:
+    get:
+      tags:
+        - Super Candles - Валюта
+      summary: Валюта, orderstats (один инструмент)
+      description: данные по одному выбранному инструменту за период
+      parameters:
+        - name: ticker
+          in: path
+          description: вернуть данные по указанному инструменту
+          required: true
+  
+  
+  
+  
+  #futoi        
   /iss/analyticalproducts/futoi/securities.jsonp:
     get:
       tags:
-        - SuperCandles
-      summary: Finds Pets by status
-      description: Multiple status values can be provided with comma separated strings
-      parameters:
-        - name: tags
-          in: query
-          description: Tags to filter by
-          required: false
-          explode: true
-          schema:
-            type: array
-            items:
-              type: string
-              
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  #$ref: '#/components/schemas/Pet'          
-            application/xml:
-              schema:
-                type: array
-                items:
-                  #$ref: '#/components/schemas/Pet'
-        '400':
-          description: Invalid status value
-      security:
-        - basicAuth: []  # <-- use the same name here
+        - Futures Open Interest (FUTOI)
+      summary: по всем инструментам
+      description: даенные по всем инструментам за одну дату
+
     
+  /iss/analyticalproducts/futoi/securities/{ticker}.jsonp:
+    get:
+      tags:
+        - Futures Open Interest (FUTOI)
+      summary: по одному инструменту
+      description: данные по одному выбранному инструменту за период
+      parameters:
+        - name: ticker
+          in: path
+          description: вернуть данные по указанному инструменту
+          required: true
+          
+  
+  #hi2        
+  
+  #eq
+  /iss/datashop/algopack/eq/hi2.jsonp:
+    get:
+      tags:
+        - Market Concetration (HI2)
+      summary: Акции
+      description: даенные по всем инструментам за одну дату
+
+    
+  /iss/datashop/algopack/eq/hi2/{ticker}.jsonp:
+    get:
+      tags:
+        - Market Concetration (HI2)
+      summary: Акции, один инструмент
+      description: данные по одному выбранному инструменту за период
+      parameters:
+        - name: ticker
+          in: path
+          description: вернуть данные по указанному инструменту
+          required: true
+          
+  
+  #fx
+  /iss/datashop/algopack/fx/hi2.jsonp:
+    get:
+      tags:
+        - Market Concetration (HI2)
+      summary: Валюта
+      description: даенные по всем инструментам за одну дату
+
+    
+  /iss/datashop/algopack/fx/hi2/{ticker}.jsonp:
+    get:
+      tags:
+        - Market Concetration (HI2)
+      summary: Валюта, один инструмент
+      description: данные по одному выбранному инструменту за период
+      parameters:
+        - name: ticker
+          in: path
+          description: вернуть данные по указанному инструменту
+          required: true
+          
+  
+  #fut
+  /iss/datashop/algopack/fo/hi2.jsonp:
+    get:
+      tags:
+        - Market Concetration (HI2)
+      summary: Фьючерсы
+      description: даенные по всем инструментам за одну дату
+
+    
+  /iss/datashop/algopack/fo/hi2/{ticker}.jsonp:
+    get:
+      tags:
+        - Market Concetration (HI2)
+      summary: Фьючерсы, один инструмент
+      description: данные по одному выбранному инструменту за период
+      parameters:
+        - name: ticker
+          in: path
+          description: вернуть данные по указанному инструменту
+          required: true
 
 
           
@@ -79,8 +436,6 @@ components:
     basicAuth:     # This name links to the security field in each path
       type: http
       scheme: basic
-      # Add the 'x-basicauth-url' extension for your authentication URL
-      x-basicauth-url: https://passport.moex.com/authenticate
 
 security:
   - basicAuth: [] # Global security, apply to all endpoints unless overridden
