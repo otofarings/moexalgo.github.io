@@ -1,26 +1,16 @@
 <!doctype html>
 <html lang="en" class="no-js">
-
 <head>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-
   <link rel="canonical" href="https://data.moex.com/method/supercandles/">
-
   <link rel="prev" href="../../des/megaalerts/">
-
   <link rel="next" href="../futoi/">
-
   <link rel="icon" href="../../img/favicon.png">
   <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
-
   <title>Super Candles - ALGOPACK</title>
-
   <link rel="stylesheet" href="../../assets/stylesheets/main.bcfcd587.min.css">
-
   <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
-
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
@@ -30,36 +20,25 @@
       --md-code-font: "Roboto Mono"
     }
   </style>
-
   <script>__md_scope = new URL("../..", location), __md_hash = e => [...e].reduce((e, _) => (e << 5) - e + _.charCodeAt(0), 0), __md_get = (e, _ = localStorage, t = __md_scope) => JSON.parse(_.getItem(t.pathname + "." + e)), __md_set = (e, _, t = localStorage, a = __md_scope) => { try { t.setItem(a.pathname + "." + e, JSON.stringify(_)) } catch (e) { } }</script>
-
 </head>
-
 <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="amoebelabs">
-
   <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
   <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
   <label class="md-overlay" for="__drawer"></label>
   <div data-md-component="skip">
-
     <a href="#super-candles" class="md-skip">
       Skip to content
     </a>
-
   </div>
   <div data-md-component="announce">
-
   </div>
-
   <header class="md-header" data-md-component="header">
     <nav class="md-header__inner md-grid" aria-label="Header">
       <a href="../.." title="ALGOPACK" class="md-header__button md-logo" aria-label="ALGOPACK" data-md-component="logo">
-
         <img src="../../img/AlgoPack.png" alt="logo">
-
       </a>
       <label class="md-header__button md-icon" for="__drawer">
-
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z" />
         </svg>
@@ -73,16 +52,12 @@
           </div>
           <div class="md-header__topic" data-md-component="header-topic">
             <span class="md-ellipsis">
-
               Super Candles
-
             </span>
           </div>
         </div>
       </div>
-
       <label class="md-header__button md-icon" for="__search">
-
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <path
             d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z" />
@@ -96,38 +71,30 @@
               autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false"
               data-md-component="search-query" required>
             <label class="md-search__icon md-icon" for="__search">
-
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <path
                   d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z" />
               </svg>
-
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z" />
               </svg>
             </label>
             <nav class="md-search__options" aria-label="Search">
-
               <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share"
                 data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
-
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                   <path
                     d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z" />
                 </svg>
               </a>
-
               <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
-
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                   <path
                     d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z" />
                 </svg>
               </button>
             </nav>
-
             <div class="md-search__suggest" data-md-component="search-suggest"></div>
-
           </form>
           <div class="md-search__output">
             <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -141,12 +108,10 @@
           </div>
         </div>
       </div>
-
       <div class="md-header__source">
         <a href="https://github.com/moexalgo/moexalgo" title="Go to repository" class="md-source"
           data-md-component="source">
           <div class="md-source__icon md-icon">
-
             <svg xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.-->
               <path
@@ -158,100 +123,67 @@
           </div>
         </a>
       </div>
-
     </nav>
-
   </header>
-
   <div class="md-container" data-md-component="container">
-
     <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
       <div class="md-grid">
         <ul class="md-tabs__list">
-
           <li class="md-tabs__item">
             <a href="../.." class="md-tabs__link">
-
               О продукте
-
             </a>
           </li>
-
           <li class="md-tabs__item">
             <a href="../../api/" class="md-tabs__link">
-
               API
-
             </a>
           </li>
-
           <li class="md-tabs__item">
             <a href="../../modules/realtime/" class="md-tabs__link">
-
               Разделы ALGOPACK
-
             </a>
           </li>
-
           <li class="md-tabs__item">
             <a href="../../des/realtime/" class="md-tabs__link">
-
               Описание данных
-
             </a>
           </li>
-
           <li class="md-tabs__item md-tabs__item--active">
             <a href="./" class="md-tabs__link">
-
               Методология
-
             </a>
           </li>
-
           <li class="md-tabs__item">
             <a href="../../python/" class="md-tabs__link">
-
               Python
-
             </a>
           </li>
-
           <li class="md-tabs__item">
             <a href="../../contacts/" class="md-tabs__link">
-
               Обратная связь
-
             </a>
           </li>
-
         </ul>
       </div>
     </nav>
-
     <main class="md-main" data-md-component="main">
       <div class="md-main__inner md-grid">
-
         <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
           <div class="md-sidebar__scrollwrap">
             <div class="md-sidebar__inner">
-
               <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
                 <label class="md-nav__title" for="__drawer">
                   <a href="../.." title="ALGOPACK" class="md-nav__button md-logo" aria-label="ALGOPACK"
                     data-md-component="logo">
-
                     <img src="../../img/AlgoPack.png" alt="logo">
-
                   </a>
                   ALGOPACK
                 </label>
-
                 <div class="md-nav__source">
                   <a href="https://github.com/moexalgo/moexalgo" title="Go to repository" class="md-source"
                     data-md-component="source">
                     <div class="md-source__icon md-icon">
-
                       <svg xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.-->
                         <path
@@ -263,328 +195,236 @@
                     </div>
                   </a>
                 </div>
-
                 <ul class="md-nav__list" data-md-scrollfix>
-
                   <li class="md-nav__item">
                     <a href="../.." class="md-nav__link">
-
                       <span class="md-ellipsis">
                         О продукте
                       </span>
-
                     </a>
                   </li>
-
                   <li class="md-nav__item">
                     <a href="../../api/" class="md-nav__link">
-
                       <span class="md-ellipsis">
                         API
                       </span>
-
                     </a>
                   </li>
-
                   <li class="md-nav__item md-nav__item--nested">
-
                     <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
-
                     <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-
                       <span class="md-ellipsis">
                         Разделы ALGOPACK
                       </span>
-
                       <span class="md-nav__icon md-icon"></span>
                     </label>
-
                     <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
                       <label class="md-nav__title" for="__nav_3">
                         <span class="md-nav__icon md-icon"></span>
                         Разделы ALGOPACK
                       </label>
                       <ul class="md-nav__list" data-md-scrollfix>
-
                         <li class="md-nav__item">
                           <a href="../../modules/realtime/" class="md-nav__link">
-
                             <span class="md-ellipsis">
                               Real-time market data
                             </span>
-
                           </a>
                         </li>
-
                         <li class="md-nav__item">
                           <a href="../../modules/supercandles/" class="md-nav__link">
-
                             <span class="md-ellipsis">
                               Super Candles
                             </span>
-
                           </a>
                         </li>
-
                         <li class="md-nav__item">
                           <a href="../../modules/futoi/" class="md-nav__link">
-
 
                             <span class="md-ellipsis">
                               Futures Open Interest (FUTOI)
                             </span>
 
-
                           </a>
                         </li>
-
                         <li class="md-nav__item">
                           <a href="../../modules/hi2/" class="md-nav__link">
-
                             <span class="md-ellipsis">
                               Market Concentration (HI2)
                             </span>
-
                           </a>
                         </li>
-
                         <li class="md-nav__item">
                           <a href="../../modules/megaalerts/" class="md-nav__link">
-
                             <span class="md-ellipsis">
                               Mega Alerts
                             </span>
-
                           </a>
                         </li>
-
                       </ul>
                     </nav>
-
                   </li>
-
                   <li class="md-nav__item md-nav__item--nested">
-
                     <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
-
                     <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-
                       <span class="md-ellipsis">
                         Описание данных
                       </span>
-
                       <span class="md-nav__icon md-icon"></span>
                     </label>
-
                     <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
                       <label class="md-nav__title" for="__nav_4">
                         <span class="md-nav__icon md-icon"></span>
                         Описание данных
                       </label>
                       <ul class="md-nav__list" data-md-scrollfix>
-
                         <li class="md-nav__item">
                           <a href="../../des/realtime/" class="md-nav__link">
-
                             <span class="md-ellipsis">
                               Real-time market data
                             </span>
-
                           </a>
                         </li>
-
                         <li class="md-nav__item">
                           <a href="../../des/supercandles/" class="md-nav__link">
-
                             <span class="md-ellipsis">
                               Super Candles
                             </span>
-
                           </a>
                         </li>
-
                         <li class="md-nav__item">
                           <a href="../../des/futoi/" class="md-nav__link">
-
                             <span class="md-ellipsis">
                               Futures Open Interest (FUTOI)
                             </span>
-
                           </a>
                         </li>
-
                         <li class="md-nav__item">
                           <a href="../../des/hi2/" class="md-nav__link">
-
                             <span class="md-ellipsis">
                               Market Concentration (HI2)
                             </span>
-
                           </a>
                         </li>
-
                         <li class="md-nav__item">
                           <a href="../../des/megaalerts/" class="md-nav__link">
-
                             <span class="md-ellipsis">
                               Mega Alerts
                             </span>
-
                           </a>
                         </li>
-
                       </ul>
                     </nav>
-
                   </li>
-
                   <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-
                     <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
-
                     <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
-
                       <span class="md-ellipsis">
                         Методология
                       </span>
-
                       <span class="md-nav__icon md-icon"></span>
                     </label>
-
                     <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
                       <label class="md-nav__title" for="__nav_5">
                         <span class="md-nav__icon md-icon"></span>
                         Методология
                       </label>
                       <ul class="md-nav__list" data-md-scrollfix>
-
                         <li class="md-nav__item md-nav__item--active">
-
                           <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-
                           <label class="md-nav__link md-nav__link--active" for="__toc">
-
                             <span class="md-ellipsis">
                               Super Candles
                             </span>
-
                             <span class="md-nav__icon md-icon"></span>
                           </label>
-
                           <a href="./" class="md-nav__link md-nav__link--active">
-
                             <span class="md-ellipsis">
                               Super Candles
                             </span>
-
                           </a>
-
                           <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-
                             <label class="md-nav__title" for="__toc">
                               <span class="md-nav__icon md-icon"></span>
                               Table of contents
                             </label>
                             <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-
                               <li class="md-nav__item">
                                 <a href="#tradestats" class="md-nav__link">
                                   <span class="md-ellipsis">
                                     TradeStats
                                   </span>
                                 </a>
-
                                 <nav class="md-nav" aria-label="TradeStats">
                                   <ul class="md-nav__list">
-
                                     <li class="md-nav__item">
                                       <a href="#price" class="md-nav__link">
                                         <span class="md-ellipsis">
                                           price
                                         </span>
                                       </a>
-
                                     </li>
-
                                     <li class="md-nav__item">
                                       <a href="#vwap" class="md-nav__link">
                                         <span class="md-ellipsis">
                                           vwap
                                         </span>
                                       </a>
-
                                     </li>
-
                                     <li class="md-nav__item">
                                       <a href="#trades" class="md-nav__link">
                                         <span class="md-ellipsis">
                                           trades
                                         </span>
                                       </a>
-
                                     </li>
-
                                     <li class="md-nav__item">
                                       <a href="#vol" class="md-nav__link">
                                         <span class="md-ellipsis">
                                           vol
                                         </span>
                                       </a>
-
                                     </li>
-
                                     <li class="md-nav__item">
                                       <a href="#val" class="md-nav__link">
                                         <span class="md-ellipsis">
                                           val
                                         </span>
                                       </a>
-
                                     </li>
-
                                   </ul>
                                 </nav>
-
                               </li>
-
                               <li class="md-nav__item">
                                 <a href="#orderstats" class="md-nav__link">
                                   <span class="md-ellipsis">
                                     OrderStats
                                   </span>
                                 </a>
-
                                 <nav class="md-nav" aria-label="OrderStats">
                                   <ul class="md-nav__list">
-
                                     <li class="md-nav__item">
                                       <a href="#vol_1" class="md-nav__link">
                                         <span class="md-ellipsis">
                                           vol
                                         </span>
                                       </a>
-
                                     </li>
-
                                     <li class="md-nav__item">
                                       <a href="#val_1" class="md-nav__link">
                                         <span class="md-ellipsis">
                                           val
                                         </span>
                                       </a>
-
                                     </li>
-
                                     <li class="md-nav__item">
                                       <a href="#vwap_1" class="md-nav__link">
                                         <span class="md-ellipsis">
                                           vwap
                                         </span>
                                       </a>
-
                                       <nav class="md-nav" aria-label="vwap">
                                         <ul class="md-nav__list">
-
                                           <li class="md-nav__item">
                                             <a href="#_1" class="md-nav__link">
                                               <span class="md-ellipsis">
@@ -592,364 +432,270 @@
                                                 объем заявок
                                               </span>
                                             </a>
-
                                           </li>
-
                                         </ul>
                                       </nav>
-
                                     </li>
-
                                   </ul>
                                 </nav>
-
                               </li>
-
                               <li class="md-nav__item">
                                 <a href="#orderbook-stats" class="md-nav__link">
                                   <span class="md-ellipsis">
                                     ORDERBOOK STATS
                                   </span>
                                 </a>
-
                                 <nav class="md-nav" aria-label="ORDERBOOK STATS">
                                   <ul class="md-nav__list">
-
                                     <li class="md-nav__item">
                                       <a href="#spread" class="md-nav__link">
                                         <span class="md-ellipsis">
                                           spread
                                         </span>
                                       </a>
-
                                     </li>
-
                                     <li class="md-nav__item">
                                       <a href="#levels" class="md-nav__link">
                                         <span class="md-ellipsis">
                                           levels
                                         </span>
                                       </a>
-
                                     </li>
-
                                     <li class="md-nav__item">
                                       <a href="#vol_2" class="md-nav__link">
                                         <span class="md-ellipsis">
                                           vol
                                         </span>
                                       </a>
-
                                     </li>
-
                                     <li class="md-nav__item">
                                       <a href="#val_2" class="md-nav__link">
                                         <span class="md-ellipsis">
                                           val
                                         </span>
                                       </a>
-
                                     </li>
-
                                     <li class="md-nav__item">
                                       <a href="#imbalance" class="md-nav__link">
                                         <span class="md-ellipsis">
                                           imbalance
                                         </span>
                                       </a>
-
                                     </li>
-
                                     <li class="md-nav__item">
                                       <a href="#vwap_2" class="md-nav__link">
                                         <span class="md-ellipsis">
                                           vwap
                                         </span>
                                       </a>
-
                                     </li>
-
                                   </ul>
                                 </nav>
-
                               </li>
-
                             </ul>
-
                           </nav>
-
                         </li>
-
                         <li class="md-nav__item">
                           <a href="../futoi/" class="md-nav__link">
-
                             <span class="md-ellipsis">
                               Futures Open Interest (FUTOI)
                             </span>
-
                           </a>
                         </li>
-
                         <li class="md-nav__item">
                           <a href="../hi2/" class="md-nav__link">
-
                             <span class="md-ellipsis">
                               Market Concentration (HI2)
                             </span>
-
                           </a>
                         </li>
-
                         <li class="md-nav__item">
                           <a href="../megaalerts/" class="md-nav__link">
-
                             <span class="md-ellipsis">
                               Mega Alerts
                             </span>
-
                           </a>
                         </li>
-
                       </ul>
                     </nav>
-
                   </li>
-
                   <li class="md-nav__item">
                     <a href="../../python/" class="md-nav__link">
-
                       <span class="md-ellipsis">
                         Python
                       </span>
-
                     </a>
                   </li>
-
                   <li class="md-nav__item">
                     <a href="../../contacts/" class="md-nav__link">
-
                       <span class="md-ellipsis">
                         Обратная связь
                       </span>
-
                     </a>
                   </li>
-
                 </ul>
               </nav>
             </div>
           </div>
         </div>
-
         <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
           <div class="md-sidebar__scrollwrap">
             <div class="md-sidebar__inner">
-
-
               <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-
                 <label class="md-nav__title" for="__toc">
                   <span class="md-nav__icon md-icon"></span>
                   Table of contents
                 </label>
                 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-
                   <li class="md-nav__item">
                     <a href="#tradestats" class="md-nav__link">
                       <span class="md-ellipsis">
                         TradeStats
                       </span>
                     </a>
-
                     <nav class="md-nav" aria-label="TradeStats">
                       <ul class="md-nav__list">
-
                         <li class="md-nav__item">
                           <a href="#price" class="md-nav__link">
                             <span class="md-ellipsis">
                               price
                             </span>
                           </a>
-
                         </li>
-
                         <li class="md-nav__item">
                           <a href="#vwap" class="md-nav__link">
                             <span class="md-ellipsis">
                               vwap
                             </span>
                           </a>
-
                         </li>
-
                         <li class="md-nav__item">
                           <a href="#trades" class="md-nav__link">
                             <span class="md-ellipsis">
                               trades
                             </span>
                           </a>
-
                         </li>
-
                         <li class="md-nav__item">
                           <a href="#vol" class="md-nav__link">
                             <span class="md-ellipsis">
                               vol
                             </span>
                           </a>
-
                         </li>
-
                         <li class="md-nav__item">
                           <a href="#val" class="md-nav__link">
                             <span class="md-ellipsis">
                               val
                             </span>
                           </a>
-
                         </li>
-
                       </ul>
                     </nav>
-
                   </li>
-
                   <li class="md-nav__item">
                     <a href="#orderstats" class="md-nav__link">
                       <span class="md-ellipsis">
                         OrderStats
                       </span>
                     </a>
-
                     <nav class="md-nav" aria-label="OrderStats">
                       <ul class="md-nav__list">
-
                         <li class="md-nav__item">
                           <a href="#vol_1" class="md-nav__link">
                             <span class="md-ellipsis">
                               vol
                             </span>
                           </a>
-
                         </li>
-
                         <li class="md-nav__item">
                           <a href="#val_1" class="md-nav__link">
                             <span class="md-ellipsis">
                               val
                             </span>
                           </a>
-
                         </li>
-
                         <li class="md-nav__item">
                           <a href="#vwap_1" class="md-nav__link">
                             <span class="md-ellipsis">
                               vwap
                             </span>
                           </a>
-
                           <nav class="md-nav" aria-label="vwap">
                             <ul class="md-nav__list">
-
                               <li class="md-nav__item">
                                 <a href="#_1" class="md-nav__link">
                                   <span class="md-ellipsis">
                                     Средневзвешенная цена — это средняя цена заявок, весом которых является объем заявок
                                   </span>
                                 </a>
-
                               </li>
-
                             </ul>
                           </nav>
-
                         </li>
-
                       </ul>
                     </nav>
-
                   </li>
-
                   <li class="md-nav__item">
                     <a href="#orderbook-stats" class="md-nav__link">
                       <span class="md-ellipsis">
                         ORDERBOOK STATS
                       </span>
                     </a>
-
                     <nav class="md-nav" aria-label="ORDERBOOK STATS">
                       <ul class="md-nav__list">
-
                         <li class="md-nav__item">
                           <a href="#spread" class="md-nav__link">
                             <span class="md-ellipsis">
                               spread
                             </span>
                           </a>
-
                         </li>
-
                         <li class="md-nav__item">
                           <a href="#levels" class="md-nav__link">
                             <span class="md-ellipsis">
                               levels
                             </span>
                           </a>
-
                         </li>
-
                         <li class="md-nav__item">
                           <a href="#vol_2" class="md-nav__link">
                             <span class="md-ellipsis">
                               vol
                             </span>
                           </a>
-
                         </li>
-
                         <li class="md-nav__item">
                           <a href="#val_2" class="md-nav__link">
                             <span class="md-ellipsis">
                               val
                             </span>
                           </a>
-
                         </li>
-
                         <li class="md-nav__item">
                           <a href="#imbalance" class="md-nav__link">
                             <span class="md-ellipsis">
                               imbalance
                             </span>
                           </a>
-
                         </li>
-
                         <li class="md-nav__item">
                           <a href="#vwap_2" class="md-nav__link">
                             <span class="md-ellipsis">
                               vwap
                             </span>
                           </a>
-
                         </li>
-
                       </ul>
                     </nav>
-
                   </li>
-
                 </ul>
-
               </nav>
             </div>
           </div>
         </div>
-
         <div class="md-content" data-md-component="content">
           <article class="md-content__inner md-typeset">
-
             <h1 id="super-candles">Super Candles</h1>
             <h2 id="tradestats">TradeStats</h2>
             <p><img alt="image" src="https://data.moex.com/static/media/countImages1.1397ae4537045b734e11.png" /></p>
@@ -1573,7 +1319,6 @@
               </table>
               <h3 id="vwap_2">vwap</h3>
               <p><img alt="image" src="https://data.moex.com/static/media/countImages16.31fa4eac84b0a4e41ec2.png" />
-
               <table>
                 <thead>
                   <tr>
@@ -1603,8 +1348,7 @@
               <blockquote>
                 <p><em>Есть 2 заявки на покупку: 100 акций по 10 ₽ и 200 акций по 20 ₽, тогда</em></p>
               </blockquote>
-              <pre><code>(100*10 + 200*20) / (100 + 200) = 16.67 ₽
-  </code></pre>
+              <pre><code>(100*10 + 200*20) / (100 + 200) = 16.67 ₽</code></pre>
               <table>
                 <thead>
                   <tr>
@@ -1633,49 +1377,31 @@
                     ∑(vol * price) ), а затем рассчитать средневзвешенную цену для этих заявок, как в примере выше с
                     b_pr_vwap / s_pr_vwap.</em></p>
               </blockquote>
-              <pre><code>vwap_b_1mio = (150 * 3000 + 100 * 3500 + 50 * 4000) / (150 + 100 + 50) = 333.33 ₽
-  </code></pre>
-
+              <pre><code>vwap_b_1mio = (150 * 3000 + 100 * 3500 + 50 * 4000) / (150 + 100 + 50) = 333.33 ₽</code></pre>
           </article>
         </div>
-
-
         <script>var target = document.getElementById(location.hash.slice(1)); target && target.name && (target.checked = target.name.startsWith("__tabbed_"))</script>
       </div>
-
     </main>
-
     <footer class="md-footer">
-
       <div class="md-footer-meta md-typeset">
         <div class="md-footer-meta__inner md-grid">
           <div class="md-copyright">
-
 
             Made with
             <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
               Material for MkDocs
             </a>
-
           </div>
-
         </div>
       </div>
     </footer>
-
   </div>
   <div class="md-dialog" data-md-component="dialog">
     <div class="md-dialog__inner md-typeset"></div>
   </div>
-
-
   <script id="__config"
     type="application/json">{"base": "../..", "features": ["navigation.tabs", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-
-
   <script src="../../assets/javascripts/bundle.1e8ae164.min.js"></script>
-
-
 </body>
-
 </html>
